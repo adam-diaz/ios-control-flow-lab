@@ -33,6 +33,7 @@ print("D")
 - C
 - D
 
+## Answer: A, C, D
 ***
 ## Question 2
 
@@ -55,6 +56,8 @@ switch appInfo {
 - Thanks for looking at myCoolApp!
 - I'm not quite sure what you are looking at
 - It will give a compile-time error
+
+## myCoolApp hasn't released yet
 
 ***
 ## Question 3
@@ -80,6 +83,7 @@ default:
 - C
 - D
 
+## Answer: D
 ***
 ## Question 4
 
@@ -102,7 +106,8 @@ case "snickers":
 - No opening and closing brackets in each of the cases
 - No default case in the switch statement
 - No print statement right outside the switch statement
-
+ 
+ ## Answer: No default case in the switch statement
 ***
 ## Question 5
 
@@ -111,7 +116,16 @@ Given the current weather conditions (rain, sunny, snow), use a switch statement
 ```swift
 let currentWeather = "rain"
 
-// enter code below
+switch currentWeather{
+case "sunny":
+    print("Wear sunblock")
+case "rain":
+    print("Bring an umbrella")
+case "snow":
+    print("Wear your coat")
+default:
+    print("Good Luck")
+}
 ```
 
 ***
@@ -123,7 +137,9 @@ Given the first name and last name of a Fellow, declare `fullName` variable and 
 let firstName = "John"
 let lastName = "Appleseed"
 
-// enter code below
+let fullName = firstName + " " + lastName
+
+print("The Fellow's full name is \(fullName)")
 ```
 
 ***
@@ -141,7 +157,16 @@ if temperatureInFahrenheit <= 40 {
  print("Weather is moderate.")
 }
 
-//Re-written statement here
+/*
+switch  temperatureInFahrenheit {
+case 0..<41:
+    print("its cold out")
+case 85...:
+    print("Its really warm")
+default:
+    print("Weather is moderate")
+}
+*/
 
 ```
 
@@ -152,11 +177,11 @@ if temperatureInFahrenheit <= 40 {
 Complete the following code so that "You win!" is printed.
 
 ```swift
-if {
- print("You win!")
-} 
-else {
- print("You lose!")
+let playerScore = 11
+if playerScore >= 10 {
+   print("You win!")
+} else {
+   print("You lose!")
 }
 ```
 ***
@@ -184,6 +209,29 @@ var numberOfSides = 2
 Output:
 Error
 
+Answer:
+
+switch numberOfSides {
+case 3:
+    print("Triangle")
+case 4:
+    print("Square")
+case 5:
+    print("Pentagon")
+case 6:
+    print("Hexagon")
+case 7:
+    print("Heptagon")
+case 8:
+    print("Octagon")
+case 9:
+    print("Nonagon")
+case 10:
+    print("Decagon")
+default:
+    print("Error")
+}
+
 ```
 ***
 
@@ -199,6 +247,23 @@ Numeric Score 	Letter Grade
 70 - 79 	C
 65 - 69 	D
 Below 65 	F
+
+var numericScore = 64
+
+switch numericScore {
+case 100...:
+    print("A+")
+case 90..<100:
+    print("A")
+case  80..<90:
+    print("B")
+case  70..<80:
+    print("C")
+case  65..<70:
+    print("D")
+default:
+    print("F")
+}
 ```
 ***
 
@@ -208,13 +273,13 @@ What is wrong with the block of code below?  Correct it so it behaves as expecte
 
 ```swift
 let firstName = "Peter"
-
 if firstName == "Peter" {
- let lastName = "Gabriel"
+print("\(firstName) Gabriel")
 } else if firstName == "Phil" {
- let lastName = "Collins"
+print("\(firstName) Collins")
+} else {
+print("Please provide a first name.")
 }
-let fullName = firstName + " " + lastName
 ```
 ***
 
@@ -224,7 +289,13 @@ Write an if statement that prints out what decade of life someone is in (e.g "Yo
 
 ```swift
 let nameAndBirthYear: (String, Int)
-
+let nameAndBirthYear = (name: "Adam", birthyear: 1995)
+switch nameAndBirthYear {
+case (_, 1990...1999) :
+    print("\(nameAndBirthYear.name), you are in your twenties.")
+default :
+    print("You are not in your twenties.")
+}
 ```
 ***
 
@@ -258,6 +329,12 @@ What happens when you change number to:
 
 What happens when you remove the default clause?
 
+## Answers:
+a: system prints "Days in year"
+b: system prints "Bytes in a Kilobyte
+c: system prints "Some uninteresting number"
+
+If you remove the default, clause then the system wont compile.
 ***
 
 
@@ -278,6 +355,22 @@ var message = String()
 if population > 10000 {
  message = "\(population) is a large town"
 }
+
+a. } else if population >= 5000 && population < 10000 {
+    message = "\(population) is a medium size town"
+}
+b. else {
+    message = "It's a mid-sized town"
+}
+c. 
+switch population {
+case 10000 :
+    print("\(population) is a large town")
+case 5000 ..< 10000 :
+    print("\(population) is a medium size town")
+default:
+    print("It's a small town")
+}
 ```
 ***
 
@@ -291,5 +384,14 @@ b. Using a switch statement
 
 ```swift
 let myTuple: (Int, Int) = (5, 10)
-```
+
+a. print(myTuple.0 + myTuple.1 == 15 ? "sum is 15" : "sum is not 15")
+
+b. 
+switch myTuple.0 + myTuple.1 {
+case 15:
+    print("sum is 15")
+default:
+    print("sum is not 15")
+}```
 ***
